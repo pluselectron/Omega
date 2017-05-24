@@ -50,14 +50,6 @@ void Mixkpi_fit_1(string &input_file) {
     RooRealVar width1("width1", "width1", 0.0195);
     RooVoigtian kppdf1("kppdf1", "from K^{+*}K^{-} of f_{1}(1420) decay", m_kpstar, mass1, vsigma1, width1);
 //////////// Probability Distribution function_2 from K^{-*}K^{+} of f_{1}(1420) decay//////////////
-//    RooRealVar c1("c1", "coefficient c#1", -0.676);
-//    RooRealVar c2("c2", "coefficient c#2", -0.946);
-//    RooRealVar c3("c3", "coefficient c#3", 1);
-//    RooRealVar c4("c4", "coefficient c#4", -0.082);
-//    RooRealVar c5("c5", "coefficient c#5", -0.422);
-//    RooRealVar c6("c6", "coefficient c#6", 0.28);
-//    RooChebychev kppdf2("kppdf2", "from K^{-*}K^{+} of f_{1}(1420) decay", m_kpstar,
-//                        RooArgList(c1, c2, c3, c4, c5, c6));
 //    auto kppdf2 = *(CreateChebychev("kppdf2", "from K^{-*}K^{+} of f_{1}(1420) decay", m_kpstar,
 //                                    vector<double>{-0.67, -0.946, 1, -0.082, -0.422, 0.28}));
 /////////// Probability Distribution function_3 from K^{+}K^{-}#pi^{0} of f_{1}(1420) decay///////////
@@ -73,11 +65,6 @@ void Mixkpi_fit_1(string &input_file) {
     RooRealVar width3("width3", "width3", 0.008);
     RooVoigtian kppdf4("kppdf4", "from K^{+*}K^{-} of J/psi threebody decay", m_kpstar, mass3, vsigma3, width3);
 /////////// Probability Distribution function_5 from K^{-*}K^{+} of J/psi threebody decay///////////
-//    RooRealVar cc_1("cc_1", "coefficient c#1", -0.28);
-//    RooRealVar cc_2("cc_2", "coefficient c#2", -1);
-//    RooRealVar cc_3("cc_3", "coefficient c#3", -0.47);
-//    RooRealVar cc_4("cc_4", "coefficient c#4", -0.604);
-//    RooChebychev kppdf5("kppdf5", "Background", m_kpstar, RooArgList(cc_1, cc_2, cc_3, cc_4));
     auto kppdf5 = *(CreateChebychev("kppdf5", "Background", "cc", m_kpstar, vector<double>{-0.28, -1, -0.47, -0.604}));
     /////////// Probability Distribution function_6 from K^{+*}K^{-} of #eta(1475) decay/////////////
     RooRealVar mass5("mass5", "mass5", 0.8779);
@@ -94,12 +81,6 @@ void Mixkpi_fit_1(string &input_file) {
 //    auto kppdf7 = *(CreateChebychev("kppdf7", "from K^{-*}K^{+} of #eta(1475) decay","cc1",m_kpstar,
 //                                    vector<double>{-0.08, -0.276, 0.91, -0.023}));
     /////////// Probability Distribution function_8 from K^{+}K^{-}#pi^{0} of #eta(1475) decay///////////
-//    RooRealVar cc2_1("cc2_1", "coefficient c#1", -0.361);
-//    RooRealVar cc2_2("cc2_2", "coefficient c#2", -0.306);
-//    RooRealVar cc2_3("cc2_3", "coefficient c#3", 0.87);
-//    RooRealVar cc2_4("cc2_4", "coefficient c#4", -0.093);
-//    RooChebychev kppdf8("kppdf8", "from K^{+}K^{-}#pi^{0} of #eta(1475) decay", m_kpstar,
-//                        RooArgList(cc2_1, cc2_2, cc2_3, cc2_4));
     auto kppdf8 = *(CreateChebychev("kppdf8", "from K^{+}K^{-}#pi^{0} of #eta(1475) decay", "cc2", m_kpstar,
                                     vector<double>{-0.361, -0.306, 0.87, -0.093}));
 
